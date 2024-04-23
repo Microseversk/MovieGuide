@@ -1,13 +1,15 @@
+import MovieInfoPage from '@src/pages/MovieInfo/MovieInfoPage'
+import MoviesFeedPage from '@src/pages/MoviesFeed/MoviesFeedPage'
 import { Navigate, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <>Main page</>,
+		element: <MoviesFeedPage />,
 	},
 	{
 		path: '/movie/:id',
-		element: <>Movie details page</>,
+		element: <MovieInfoPage />,
 	},
 	{
 		path: '*',

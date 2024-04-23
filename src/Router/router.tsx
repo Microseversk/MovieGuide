@@ -4,7 +4,7 @@ import { Navigate, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: '/movies/:page?',
 		element: <MoviesFeedPage />,
 	},
 	{
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '*',
-		element: <Navigate to={'/'} replace />,
+		element: <Navigate to={'/movies'} replace />,
 	},
 ])
 export default router

@@ -16,6 +16,7 @@ const MovieCard = ({ posterPath, voteAverage, title, releaseDate }: MovieCardPro
 				height={'80%'}
 				position='top'
 			/>
+
 			<MDBCardBody className='p-0 pe-1 ps-2 d-md-flex justify-content-start align-items-center'>
 				<MDBCardText className='fw-bold fs-1 m-0'>{voteAverage.toFixed(1)}</MDBCardText>
 				<div className='ms-md-3 w-100 pt-2'>

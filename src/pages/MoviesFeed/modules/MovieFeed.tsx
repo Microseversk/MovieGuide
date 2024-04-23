@@ -12,9 +12,9 @@ const MovieFeed = () => {
 	if (isLoading) return <div>Loading...</div>
 
 	return (
-		<MDBRow className='align-items-lg-stretch '>
+		<MDBRow className=''>
 			{data?.data.results.map(movie => (
-				<MDBCol sm={4} lg={2} key={movie.id}>
+				<MDBCol md={6} lg={3} key={movie.id} className='mt-3'>
 					<MovieCard
 						key={movie.id}
 						posterPath={movie.poster_path}

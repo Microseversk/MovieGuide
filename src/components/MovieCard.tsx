@@ -1,5 +1,7 @@
 import formatDate from '@src/helpers/dateHelper'
-import { MDBCard, MDBCardBody, MDBCardImage, MDBCardText } from 'mdb-react-ui-kit'
+import { MDBCard, MDBCardBody, MDBCardText } from 'mdb-react-ui-kit'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 interface MovieCardProps {
 	posterPath: string
@@ -10,11 +12,11 @@ interface MovieCardProps {
 const MovieCard = ({ posterPath, voteAverage, title, releaseDate }: MovieCardProps) => {
 	return (
 		<MDBCard className='border h-100'>
-			<MDBCardImage
+			<LazyLoadImage
+				className='card-img-top'
+				alt='...'
 				src={`https://image.tmdb.org/t/p/original${posterPath}`}
-				alt={`Постер ${title}`}
-				height={'80%'}
-				position='top'
+				effect='blur'
 			/>
 
 			<MDBCardBody className='p-0 pe-1 ps-2 d-md-flex justify-content-start align-items-center'>

@@ -6,28 +6,35 @@ const Pagination = () => {
 	const nav = useNavigate()
 
 	const onLinkClick = (page: number) => {
-		if (page === 1) return
 		nav(`/movies/${page}`)
 	}
 
 	return (
 		<nav>
 			<MDBPagination className='mb-0' size='lg'>
-				<MDBPaginationItem onClick={() => onLinkClick(Number(page) > 1 ? Number(page) - 1 : 1)}>
+				<MDBPaginationItem
+					style={{ cursor: 'pointer' }}
+					onClick={() => onLinkClick(Number(page) > 1 ? Number(page) - 1 : 1)}>
 					<MDBPaginationLink>
 						<span>«</span>
 					</MDBPaginationLink>
 				</MDBPaginationItem>
-				<MDBPaginationItem onClick={() => onLinkClick(Number(page) > 3 ? Number(page) - 2 : 1)}>
+				<MDBPaginationItem
+					style={{ cursor: 'pointer' }}
+					onClick={() => onLinkClick(Number(page) > 3 ? Number(page) - 2 : 1)}>
 					<MDBPaginationLink>{Number(page) > 3 ? Number(page) - 2 : 1}</MDBPaginationLink>
 				</MDBPaginationItem>
-				<MDBPaginationItem onClick={() => onLinkClick(Number(page) > 3 ? Number(page) - 1 : 2)}>
+				<MDBPaginationItem
+					style={{ cursor: 'pointer' }}
+					onClick={() => onLinkClick(Number(page) > 3 ? Number(page) - 1 : 2)}>
 					<MDBPaginationLink>{Number(page) > 3 ? Number(page) - 1 : 2}</MDBPaginationLink>
 				</MDBPaginationItem>
-				<MDBPaginationItem onClick={() => onLinkClick(Number(page) > 3 ? Number(page) : 3)}>
+				<MDBPaginationItem
+					style={{ cursor: 'pointer' }}
+					onClick={() => onLinkClick(Number(page) > 3 ? Number(page) : 3)}>
 					<MDBPaginationLink>{Number(page) > 3 ? Number(page) : 3}</MDBPaginationLink>
 				</MDBPaginationItem>
-				<MDBPaginationItem onClick={() => onLinkClick(Number(page) + 1)}>
+				<MDBPaginationItem style={{ cursor: 'pointer' }} onClick={() => onLinkClick(Number(page) + 1)}>
 					<MDBPaginationLink>
 						<span>»</span>
 					</MDBPaginationLink>

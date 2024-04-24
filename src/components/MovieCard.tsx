@@ -1,3 +1,4 @@
+import { IMG_URL } from '@src/api/api'
 import formatDate from '@src/helpers/dateHelper'
 import { MDBCard, MDBCardBody, MDBCardText } from 'mdb-react-ui-kit'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -16,7 +17,7 @@ const MovieCard = ({ posterPath, voteAverage, title, releaseDate, onClick }: Mov
 			<LazyLoadImage
 				className='card-img-top'
 				alt={`${title} poster`}
-				src={`https://image.tmdb.org/t/p/original${posterPath}`}
+				src={`${IMG_URL}${posterPath}`}
 				height={'100%'}
 				effect='blur'
 				loading='lazy'

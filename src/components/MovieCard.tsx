@@ -8,15 +8,17 @@ interface MovieCardProps {
 	voteAverage: number
 	title: string
 	releaseDate: string
+	onClick?: () => void
 }
-const MovieCard = ({ posterPath, voteAverage, title, releaseDate }: MovieCardProps) => {
+const MovieCard = ({ posterPath, voteAverage, title, releaseDate, onClick }: MovieCardProps) => {
 	return (
-		<MDBCard className='border h-100'>
+		<MDBCard onClick={onClick} className='border h-100'>
 			<LazyLoadImage
 				className='card-img-top'
 				alt='...'
 				src={`https://image.tmdb.org/t/p/original${posterPath}`}
 				effect='blur'
+				height={'100%'}
 			/>
 
 			<MDBCardBody className='p-0 pe-1 ps-2 d-md-flex justify-content-start align-items-center'>

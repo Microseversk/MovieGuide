@@ -2,9 +2,10 @@ import MovieCard from '@src/components/MovieCard'
 import getMoviePopular from '@src/services/MovieService/get/getMoviePopular'
 import { useQuery } from '@tanstack/react-query'
 import { MDBCol, MDBRow } from 'mdb-react-ui-kit'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const MovieFeed = () => {
+	const nav = useNavigate()
 	const { page } = useParams()
 	const { data, isLoading } = useQuery({
 		queryKey: ['popularMoviesFeed', page],
@@ -14,7 +15,7 @@ const MovieFeed = () => {
 	if (isLoading) return <div>Loading...</div>
 
 	return (
-		<MDBRow className=''>
+		<MDBRow>
 			{data?.data.results.map(movie => (
 				<MDBCol md={6} lg={3} key={movie.id} className='mt-3'>
 					<MovieCard
@@ -23,6 +24,7 @@ const MovieFeed = () => {
 						voteAverage={movie.vote_average}
 						title={movie.title}
 						releaseDate={movie.release_date}
+						onClick={() => nav(`/movie/${movie.id}`)}
 					/>
 				</MDBCol>
 			))}

@@ -13,4 +13,14 @@ const $api = axios.create({
 	},
 })
 
+$api.interceptors.response.use(
+	response => {
+		return response
+	},
+	error => {
+		window.location.href = '/error'
+		return error
+	}
+)
+
 export default $api

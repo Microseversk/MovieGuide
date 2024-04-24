@@ -11,6 +11,7 @@ const MovieFeed = () => {
 	const { data, isLoading } = useMoviesPopular(page ? Number(page) : 1)
 
 	if (isLoading) return <Loader />
+
 	return (
 		<MDBRow>
 			{data?.data.results.map(movie => (

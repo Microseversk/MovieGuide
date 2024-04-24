@@ -1,3 +1,4 @@
+import Loader from '@src/components/Loader'
 import MovieCard from '@src/components/MovieCard'
 import useMoviesPopular from '@src/hooks/useMoviesPopular'
 import { MDBCol, MDBRow } from 'mdb-react-ui-kit'
@@ -9,7 +10,7 @@ const MovieFeed = () => {
 
 	const { data, isLoading } = useMoviesPopular(page ? Number(page) : 1)
 
-	if (isLoading) return <div>Loading...</div>
+	if (isLoading) return <Loader />
 	return (
 		<MDBRow>
 			{data?.data.results.map(movie => (

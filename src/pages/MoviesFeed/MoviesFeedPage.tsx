@@ -8,7 +8,6 @@ const MovieInfoPage = () => {
 			<MDBTypography tag='h1'>Популярные фильмы</MDBTypography>
 			<Pagination />
 			<MovieFeed />
-			<Pagination />
 		</MDBContainer>
 	)
 }

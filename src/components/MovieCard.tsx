@@ -15,10 +15,11 @@ const MovieCard = ({ posterPath, voteAverage, title, releaseDate, onClick }: Mov
 		<MDBCard onClick={onClick} className='border h-100'>
 			<LazyLoadImage
 				className='card-img-top'
-				alt='...'
+				alt={`${title} poster`}
 				src={`https://image.tmdb.org/t/p/original${posterPath}`}
-				effect='blur'
 				height={'100%'}
+				effect='blur'
+				loading='lazy'
 			/>
 
 			<MDBCardBody className='p-0 pe-1 ps-2 d-md-flex justify-content-start align-items-center'>

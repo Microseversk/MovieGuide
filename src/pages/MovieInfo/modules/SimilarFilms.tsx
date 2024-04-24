@@ -15,7 +15,7 @@ const SimilarFilms = ({ movies, className }: SimilarFilmsProps) => {
 	return (
 		<MDBRow className={className}>
 			{movies.slice(0, 6).map(movie => (
-				<MDBCol onClick={() => nav(`/movie/${movie.id}`)} md={2} className='mt-3'>
+				<MDBCol key={movie.id} onClick={() => nav(`/movie/${movie.id}`)} sm={4} md={2} className='mt-3'>
 					<MovieCard key={movie.id} posterPath={movie.poster_path} title={movie.title} />
 				</MDBCol>
 			))}

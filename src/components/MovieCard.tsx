@@ -5,9 +5,9 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 
 interface MovieCardProps {
 	posterPath: string
-	voteAverage: number
+	voteAverage?: number
 	title: string
-	releaseDate: string
+	releaseDate?: string
 	onClick?: () => void
 }
 const MovieCard = ({ posterPath, voteAverage, title, releaseDate, onClick }: MovieCardProps) => {
@@ -22,10 +22,10 @@ const MovieCard = ({ posterPath, voteAverage, title, releaseDate, onClick }: Mov
 			/>
 
 			<MDBCardBody className='p-0 pe-1 ps-2 d-md-flex justify-content-start align-items-center'>
-				<MDBCardText className='fw-bold fs-1 m-0'>{voteAverage.toFixed(1)}</MDBCardText>
+				<MDBCardText className='fw-bold fs-1 m-0'>{voteAverage?.toFixed(1)}</MDBCardText>
 				<div className='ms-md-3 w-100 pt-2'>
 					<MDBCardText className='fs-5'>{title}</MDBCardText>
-					<MDBCardText className='text-muted'>{formatDate(releaseDate)}</MDBCardText>
+					<MDBCardText className='text-muted'>{releaseDate && formatDate(releaseDate)}</MDBCardText>
 				</div>
 			</MDBCardBody>
 		</MDBCard>

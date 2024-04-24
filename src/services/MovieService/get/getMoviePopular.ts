@@ -5,7 +5,7 @@ interface getMoviePopularParams {
 	page: number
 }
 
-export interface PopulavMoviesResponse {
+export interface MoviesResponse {
 	page: number
 	results: Movie[]
 	total_pages: number
@@ -13,7 +13,7 @@ export interface PopulavMoviesResponse {
 }
 
 const getMoviePopular = async (params?: getMoviePopularParams) => {
-	return $api.get<PopulavMoviesResponse>('/movie/popular', {
+	return $api.get<MoviesResponse>('/movie/popular', {
 		params: {
 			...params,
 			language: 'ru-RU',

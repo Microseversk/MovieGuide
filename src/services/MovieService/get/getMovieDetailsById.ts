@@ -1,8 +1,8 @@
 import $api from '@src/api/api'
-import { Movie } from '@src/types/Movie'
+import { MovieDetails } from '@src/types/Movie'
 
 const getMovieDetailsById = async (id: number) => {
-	return $api.get<Movie>('/movie/' + id, {
+	return $api.get<MovieDetails>('/movie/' + id, {
 		params: {
 			language: 'ru-RU',
 		},

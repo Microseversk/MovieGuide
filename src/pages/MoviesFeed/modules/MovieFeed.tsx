@@ -13,7 +13,6 @@ const MovieFeed = () => {
 	})
 
 	if (isLoading) return <div>Loading...</div>
-
 	return (
 		<MDBRow>
 			{data?.data.results.map(movie => (
